@@ -1,0 +1,259 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal Portfolio | Research & Works</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="is-lock">
+  <div class="loader" id="loader" aria-live="polite">
+    <div class="loader__grid">
+      <div class="loader__word">Loading</div>
+      <div class="loader__glyph">+</div>
+      <div class="loader__percent"><span id="loadPercent">0</span>%</div>
+    </div>
+    <div class="loader__bar"><span id="loadBar"></span></div>
+  </div>
+
+  <nav class="nav" aria-label="Primary navigation">
+    <a href="#home" class="is-active">Home</a>
+    <a href="#education">Edu</a>
+    <a href="#research">Research</a>
+    <a href="#works">Works</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main class="page">
+    <section class="section hero" id="home">
+      <canvas class="magic-canvas" id="magicCanvas" aria-hidden="true"></canvas>
+      <div class="orbital" aria-hidden="true"></div>
+      <div class="edge-index">01 / HOMEPAGE</div>
+      <div class="section__inner">
+        <div class="kicker reveal">
+          <span>Personal Research Portfolio</span>
+          <span>Creative Lab / Web3 / Human-Computer Interaction</span>
+          <span>2026</span>
+        </div>
+
+        <div class="hero__content">
+          <div class="hero-copy">
+            <div class="hero-names reveal">
+              <p class="hero-name hero-name--kr" data-text="장우유">장우유</p>
+              <h1 class="hero-name" data-text="ZHANG YUROU">ZHANG YUROU</h1>
+            </div>
+            <div class="hero-details reveal">
+              <div class="meta-line">
+                <span>박사 Ph.D</span>
+              </div>
+              <div class="meta-line">
+                <div class="hero-tags" aria-label="Research areas">
+                  <span>Animation design</span>
+                  <span>AI-generated animation</span>
+                  <span>Cross-media Practice</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__media reveal">
+            <figure class="hero-photo" data-tilt-card aria-label="Portrait photo">
+              <div class="photo-face">
+                <img src="assets/portrait-new.jpg" alt="ZHANG YUROU portrait">
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-marquee" aria-hidden="true">
+        <div class="hero-marquee__track">
+          <span>Animation design</span>
+          <span class="is-outline">AI-generated animation</span>
+          <span>Cross-media Practice</span>
+          <span class="is-outline">Animation design</span>
+          <span>AI-generated animation</span>
+          <span class="is-outline">Cross-media Practice</span>
+          <span>Animation design</span>
+          <span class="is-outline">AI-generated animation</span>
+          <span>Cross-media Practice</span>
+          <span class="is-outline">Animation design</span>
+          <span>AI-generated animation</span>
+          <span class="is-outline">Cross-media Practice</span>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="education">
+      <div class="edge-index">03 / ACADEMIC PATH</div>
+      <div class="section__inner">
+        <div class="kicker reveal">
+          <span>Education Background</span>
+          <span>Undergraduate / Graduate / School / Major</span>
+          <span>EDU_03</span>
+        </div>
+
+        <h2 class="education-title reveal" data-scroll-title>학력</h2>
+
+        <div class="split">
+          <div class="education-cards reveal" aria-label="Education cards">
+            <button class="education-card" type="button"
+              data-edu-title="박사"
+              data-edu-type="GRADUATE"
+              data-edu-year="2026-"
+              data-edu-school="한양대학교"
+              data-edu-major="영상디자인전공">
+              <span class="education-card__index">01</span>
+              <span class="education-card__year">2026-</span>
+              <span class="education-card__type">GRADUATE</span>
+              <strong>박사</strong>
+              <span class="education-card__hint">Hover / Click</span>
+            </button>
+
+            <button class="education-card" type="button"
+              data-edu-title="석사"
+              data-edu-type="UNDERGRADUATE"
+              data-edu-year="2024-2025"
+              data-edu-school="한서대학교"
+              data-edu-major="영상애니메이션학">
+              <span class="education-card__index">02</span>
+              <span class="education-card__year">2024-2025</span>
+              <span class="education-card__type">UNDERGRADUATE</span>
+              <strong>석사</strong>
+              <span class="education-card__hint">Hover / Click</span>
+            </button>
+
+            <button class="education-card" type="button"
+              data-edu-title="학부"
+              data-edu-type="METHOD"
+              data-edu-year="2020-2025"
+              data-edu-school="후베이미술대학교"
+              data-edu-major="애니메이션 · 학사">
+              <span class="education-card__index">03</span>
+              <span class="education-card__year">2020-2025</span>
+              <span class="education-card__type">METHOD</span>
+              <strong>학부</strong>
+              <span class="education-card__hint">Hover / Click</span>
+            </button>
+          </div>
+        </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="mega" data-scroll-title>RESEARCH</div>
+      <div class="ticker" aria-hidden="true">
+        <span>Animation design / AI-generated animation / Cross-media Practice /</span>
+        <span>Animation design / AI-generated animation / Cross-media Practice /</span>
+      </div>
+      <div class="edge-index">04 / RESEARCH EXPERIENCE</div>
+      <div class="section__inner">
+        <div class="kicker reveal">
+          <span>Research Experience</span>
+          <span>From question to prototype to evidence</span>
+          <span>LAB_04</span>
+        </div>
+
+        <div class="research-strip reveal">
+          <article class="research-row">
+            <h3>논문 01</h3>
+            <span class="arrow">↗</span>
+          </article>
+          <article class="research-row">
+            <h3>논문 02</h3>
+            <span class="arrow">↗</span>
+          </article>
+          <article class="research-row">
+            <h3>논문 03</h3>
+            <span class="arrow">↗</span>
+          </article>
+        </div>
+    </section>
+
+    <section class="section" id="works">
+      <div class="edge-index">05 / SELECTED WORKS</div>
+      <div class="section__inner">
+        <div class="kicker reveal">
+          <span>Selected Works</span>
+          <span>Project cards / Intro / Image placeholders</span>
+          <span>WORK_05</span>
+        </div>
+
+        <div class="services-demo" id="servicesDemo" aria-label="Animated services module">
+          <div class="services-bg-type" aria-hidden="true">
+            <div class="services-type-row">SERVICES SERVICES</div>
+            <div class="services-type-row">SERVICES SERVICES</div>
+            <div class="services-type-row">SERVICES SERVICES</div>
+            <div class="services-type-row">SERVICES SERVICES</div>
+          </div>
+
+          <article class="services-card" id="servicesCard">
+            <div class="services-number" id="servicesNumber">01</div>
+            <div class="services-title" id="servicesTitle">Social and Content</div>
+            <div class="services-copy" id="servicesCopy">Campaign stories, daily publishing systems and the rhythm that keeps the audience close.</div>
+            <div class="services-card-footer">
+              <button class="services-arrow" type="button" id="servicesPrev" aria-label="Previous service">‹</button>
+              <div class="services-page" id="servicesPage">01/06</div>
+              <button class="services-arrow" type="button" id="servicesNext" aria-label="Next service">›</button>
+            </div>
+          </article>
+
+          <div class="services-cube-scene" aria-hidden="true">
+            <div class="services-ghost-stack">
+              <div class="services-ghost-line"></div>
+              <div class="services-ghost-line"></div>
+              <div class="services-ghost-line"></div>
+            </div>
+            <div class="services-cube-track" id="servicesCubeTrack"></div>
+          </div>
+
+          <div class="services-progress" aria-hidden="true">
+            <div class="services-progress-thumb"></div>
+          </div>
+
+          <div class="services-final-line">WE KNOW HOW TO SPREAD THE WORD</div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="mega contact-mega" data-scroll-title>연락처</div>
+      <div class="edge-index">06 / ABOUT & CONTACT</div>
+      <div class="section__inner">
+        <div class="kicker reveal">
+          <span>About Me / Contact</span>
+          <span>Open to research collaboration and creative projects</span>
+          <span>CONTACT_06</span>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <h2>연락처</h2>
+          </div>
+
+          <div class="contact-panel reveal cornered">
+            <div class="contact-row"><span>이름</span><b>장우유</b></div>
+            <div class="contact-row"><span>이메일</span><b>your.email@example.com</b></div>
+            <div class="contact-row"><span>소셜</span><b>@yourhandle</b></div>
+            <div class="contact-row"><span>위치</span><b>도시 / 대학교</b></div>
+          </div>
+        </div>
+    </section>
+  </main>
+
+  <div class="edu-modal" id="eduModal" aria-hidden="true">
+    <div class="edu-modal__backdrop" data-edu-close></div>
+    <section class="edu-modal__panel" role="dialog" aria-modal="true" aria-labelledby="eduModalTitle">
+      <button class="edu-modal__close" type="button" data-edu-close aria-label="Close education detail">×</button>
+      <div class="edu-modal__meta">
+        <span id="eduModalYear">2026-</span>
+        <span id="eduModalType">GRADUATE</span>
+      </div>
+      <h2 id="eduModalTitle">박사</h2>
+      <div class="edu-modal__grid">
+        <p><b>학교</b><span id="eduModalSchool">한양대학교</span></p>
+        <p><b>전공</b><span id="eduModalMajor">영상디자인전공</span></p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

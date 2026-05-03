@@ -34,6 +34,9 @@ const loadTimer = setInterval(() => {
       body.classList.remove("is-lock");
       body.classList.add("is-loaded");
       requestAnimationFrame(tick);
+      if (window.location.hash) {
+        requestAnimationFrame(() => scrollToSection(window.location.hash, "auto"));
+      }
     }, 420);
   }
 }, 42);
@@ -179,12 +182,29 @@ if (magicCanvas && magicState.ctx) {
   });
   requestAnimationFrame(renderMagic);
 }
+
+function getNavVisualOffset() {
+  return Math.min(118, Math.max(72, window.innerHeight * 0.095));
+}
+
+function scrollToSection(targetRef, behavior = "smooth") {
+  const target = typeof targetRef === "string" ? document.querySelector(targetRef) : targetRef;
+  if (!target) return;
+  const nextY = Math.max(0, target.getBoundingClientRect().top + window.scrollY + getNavVisualOffset());
+  window.scrollTo({ top: nextY, behavior });
+}
+
 navLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
-    const target = document.querySelector(link.getAttribute("href"));
-    target?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const targetId = link.getAttribute("href");
+    scrollToSection(targetId);
+    history.pushState(null, "", targetId);
   });
+});
+
+window.addEventListener("popstate", () => {
+  if (window.location.hash) scrollToSection(window.location.hash);
 });
 
 const revealObserver = new IntersectionObserver((entries) => {
@@ -482,33 +502,33 @@ function tick() {
 
   const modules = [
     {
-      title: "Social and Content",
-      box: "SOCIAL AND CONTENT",
+      title: "프로젝트 01",
+      box: "프로젝트 01",
       copy: "Campaign stories, daily publishing systems and the rhythm that keeps the audience close."
     },
     {
-      title: "Growth and Analytics",
-      box: "GROWTH AND ANALYTICS",
+      title: "프로젝트 02",
+      box: "프로젝트 02",
       copy: "Sharp loops for acquisition, retention and reporting, tuned for fast creative decisions."
     },
     {
-      title: "Community",
-      box: "COMMUNITY",
+      title: "프로젝트 03",
+      box: "프로젝트 03",
       copy: "Member moments, creator programs and conversations that turn attention into belonging."
     },
     {
-      title: "Design",
-      box: "DESIGN",
+      title: "프로젝트 04",
+      box: "프로젝트 04",
       copy: "Identity, motion language and digital surfaces with a precise black-and-pink signal."
     },
     {
-      title: "Press",
-      box: "PRESS",
+      title: "프로젝트 05",
+      box: "프로젝트 05",
       copy: "Launch narratives, editorial hooks and the timing needed to make the story travel."
     },
     {
-      title: "Strategy",
-      box: "SPREAD THE WORD",
+      title: "프로젝트 06",
+      box: "프로젝트 06",
       copy: "A compact system for making the right people notice, repeat and remember the message."
     }
   ];
@@ -519,6 +539,7 @@ function tick() {
   const copy = document.getElementById("servicesCopy");
   const page = document.getElementById("servicesPage");
   const track = document.getElementById("servicesCubeTrack");
+  const cubeScene = demo.querySelector(".services-cube-scene");
   const previous = document.getElementById("servicesPrev");
   const next = document.getElementById("servicesNext");
   const tabs = [...demo.querySelectorAll(".services-tab")];
@@ -574,7 +595,6 @@ function tick() {
     demo.style.setProperty("--services-active", activeIndex);
     demo.style.setProperty("--services-progress", activeIndex / (modules.length - 1));
     demo.style.setProperty("--services-pulse", activeIndex % 2);
-    demo.classList.toggle("is-final", activeIndex >= modules.length - 1);
     tabs.forEach((tab, tabIndex) => tab.classList.toggle("is-active", tabIndex === 0));
     updateBoxes();
     updateCard();
@@ -622,7 +642,7 @@ function tick() {
     move(event.deltaY > 0 ? 1 : -1);
   };
 
-  demo.addEventListener("wheel", handleServicesWheel, { passive: false });
+  cubeScene?.addEventListener("wheel", handleServicesWheel, { passive: false });
 
   document.addEventListener("keydown", (event) => {
     if (!isInView) return;

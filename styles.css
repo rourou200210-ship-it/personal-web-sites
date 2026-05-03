@@ -1426,7 +1426,7 @@ body.is-loaded .nav {
     #020202;
   box-shadow: 0 28px 80px rgba(0, 0, 0, 0.44);
   isolation: isolate;
-  touch-action: none;
+  touch-action: pan-y;
 }
 
 .services-demo::before {
@@ -1606,6 +1606,8 @@ body.is-loaded .nav {
   width: 61%;
   height: 88%;
   perspective: 850px;
+  cursor: ns-resize;
+  touch-action: none;
 }
 
 .services-cube-track {
@@ -1703,25 +1705,6 @@ body.is-loaded .nav {
   transform: rotate(180deg);
 }
 
-.services-ghost-stack {
-  position: absolute;
-  left: 30%;
-  top: 8%;
-  z-index: 2;
-  width: 52%;
-  height: 78%;
-  opacity: 0.52;
-  transform: skewY(-7deg);
-  pointer-events: none;
-}
-
-.services-ghost-line {
-  height: 20%;
-  margin-bottom: 7%;
-  border: 1px solid rgba(242, 234, 220, 0.5);
-  background: rgba(0, 0, 0, 0.55);
-}
-
 .services-progress {
   position: absolute;
   right: 5%;
@@ -1775,32 +1758,6 @@ body.is-loaded .nav {
 .services-tab.is-active {
   background: var(--service-cream);
   color: #050505;
-}
-
-.services-final-line {
-  position: absolute;
-  left: 7%;
-  bottom: 16%;
-  z-index: 13;
-  max-width: 12ch;
-  color: var(--service-pink);
-  font-size: clamp(20px, 2.55vw, 42px);
-  line-height: 0.83;
-  font-weight: 1000;
-  text-transform: uppercase;
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 800ms var(--service-ease), transform 800ms var(--service-ease);
-  pointer-events: none;
-}
-
-.services-demo.is-final .services-final-line {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.services-demo.is-final .services-card {
-  transform: translate3d(-4%, -7%, 0) scale(0.88);
 }
 
 @keyframes services-drift {
